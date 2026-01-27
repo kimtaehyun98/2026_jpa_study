@@ -18,10 +18,8 @@ public class JpaMain {
         try {
             tx.begin();
 
-            // 회원(id=1L, name="홍길동") 저장
-            Member member = new Member();
-            member.setId(1L);
-            member.setName("홍길동");
+            // 회원(id=1L, name="홍길동") 저장 (생성자로 필수값 주입)
+            Member member = new Member(1L, "홍길동");
             em.persist(member);
             System.out.println("=== 회원 저장 완료 ===");
 
